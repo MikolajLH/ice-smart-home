@@ -1,9 +1,15 @@
 #Printer1.Proxy=devices/printer-1 : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
 
-Camera.Proxy=cameras/camera : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
-Bulb.Proxy=bulbs/bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
-RGBBulb.Proxy=bulbs/rgb-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
-LEDBulb.Proxy=bulbs/led-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+Camera1.Proxy=cameras/camera : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+Bulb1.Proxy=bulbs/bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+RGBBulb1.Proxy=bulbs/rgb-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+LEDBulb1.Proxy=bulbs/led-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+
+
+Camera2.Proxy=cameras/camera : tcp -h 127.0.0.2 -p 10000 -z : udp -h 127.0.0.2 -p 10000 -z
+Bulb2.Proxy=bulbs/bulb : tcp -h 127.0.0.2 -p 10000 -z : udp -h 127.0.0.2 -p 10000 -z
+RGBBulb2.Proxy=bulbs/rgb-bulb : tcp -h 127.0.0.2 -p 10000 -z : udp -h 127.0.0.2 -p 10000 -z
+LEDBulb2.Proxy=bulbs/led-bulb : tcp -h 127.0.0.2 -p 10000 -z : udp -h 127.0.0.2 -p 10000 -z
 
 
 Ice.Warn.Connections=1
