@@ -20,7 +20,7 @@ public class CameraI implements Camera {
 
     @Override
     public String info(Current __current) {
-        return "Camera " + __current.id;
+        return "Camera " + __current.id + " " + __current.facet + " " + __current.operation + " " + __current.con;
     }
 
     @Override

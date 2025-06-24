@@ -1,10 +1,13 @@
 package smarthome;
 
+import DevicesIce.RGBColor;
 import com.zeroc.Ice.Communicator;
 import com.zeroc.Ice.Identity;
 import com.zeroc.Ice.ObjectAdapter;
 import com.zeroc.Ice.Util;
+
 import smarthome.devices.cameras.CameraI;
+import smarthome.devices.bulbs.*;
 
 public class Server {
     public void t1(String[] args){
@@ -16,8 +19,9 @@ public class Server {
 
             adapter.add(new CameraI(5, 7), new Identity("camera", "cameras"));
 
-            //adapter.add(new CameraI(5,5), new Identity("camera-1", "cameras"));
-            //adapter.add(new PrinterI(), new Identity("printer-1", "devices"));
+            adapter.add(new BulbI(), new Identity("bulb", "bulbs"));
+            adapter.add(new LEDBulbI(1.), new Identity("led-bulb", "bulbs"));
+            adapter.add(new RGBBulbI(new RGBColor(1.0, 1.0, 1.0)), new Identity("rgb-bulb", "bulbs"));
 
             adapter.activate();
 
