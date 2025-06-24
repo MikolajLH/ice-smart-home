@@ -8,7 +8,10 @@ import DevicesIce
 
 
 DEVICES = {
-    "camera": (DevicesIce.CameraPrx, "Camera.Proxy")
+    "camera": (DevicesIce.CameraPrx, "Camera.Proxy"),
+    "bulb": (DevicesIce.BulbPrx, "Bulb.Proxy"),
+    "led-bulb": (DevicesIce.LEDBulbPrx, "LEDBulb.Proxy"),
+    "rgb-bulb": (DevicesIce.RGBBulbPrx, "RGBBulb.Proxy"),
 }
 
 def clrscr():
@@ -72,10 +75,6 @@ def get_ice_obj(device_name: str, communicator):
 def main():
     obj, obj_type = None, None
     with Ice.initialize(sys.argv) as communicator:
-        #proxy = communicator.propertyToProxy("Printer1.Proxy")
-        #obj_type = DevicesIce.PrinterPrx
-        #obj = obj_type.checkedCast(proxy)
-        #print(obj.info())
         for cmd, args  in loop():
             if cmd is None or args is None:
                 continue
@@ -92,11 +91,27 @@ def main():
         
             if obj is None or obj_type is None:
                 continue
+
+            if issubclass(obj_type, DevicesIce.DevicePrx):
+                if cmd == "info":
+                    print(obj.info())
             
             if issubclass(obj_type, DevicesIce.CameraPrx):
                 if cmd == "preview" and len(args) == 0:
                     preview_mode(obj)
+
+            if issubclass(obj_type, DevicesIce.BulbPrx):
+                if cmd == "switch":
+                    obj.switchLight()
+                    print(obj.isOn())
                 
+
+            if issubclass(obj_type, DevicesIce.LEDBulbPrx):
+                pass
+
+            if issubclass(obj_type, DevicesIce.BulbPrx):
+                pass
+            
             
 
 

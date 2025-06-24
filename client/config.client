@@ -1,6 +1,10 @@
 #Printer1.Proxy=devices/printer-1 : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
 
 Camera.Proxy=cameras/camera : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+Bulb.Proxy=bulbs/bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+RGBBulb.Proxy=bulbs/rgb-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+LEDBulb.Proxy=bulbs/led-bulb : tcp -h 127.0.0.1 -p 10000 -z : udp -h 127.0.0.1 -p 10000 -z
+
 
 Ice.Warn.Connections=1
 Ice.ACM.Timeout=10
